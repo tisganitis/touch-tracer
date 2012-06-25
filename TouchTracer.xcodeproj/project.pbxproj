@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22B2B3881598094D00DA610B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B3871598094D00DA610B /* CircleView.m */; };
+		22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */; };
+		22FE1D3715980684003B310C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3615980684003B310C /* UIKit.framework */; };
+		22FE1D3915980684003B310C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3815980684003B310C /* Foundation.framework */; };
+		22FE1D3B15980684003B310C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3A15980684003B310C /* CoreGraphics.framework */; };
+		22FE1D4115980684003B310C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22FE1D3F15980684003B310C /* InfoPlist.strings */; };
+		22FE1D4315980684003B310C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1D4215980684003B310C /* main.m */; };
+		22FE1D4715980684003B310C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1D4615980684003B310C /* AppDelegate.m */; };
+		22FE1D4A15980684003B310C /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */; };
+		22FE1D4D15980684003B310C /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */; };
+		22FE1D5015980684003B310C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FE1D4F15980684003B310C /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		22B2B3861598094D00DA610B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
+		22B2B3871598094D00DA610B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchGestureRecognizer.h; sourceTree = "<group>"; };
+		22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchGestureRecognizer.m; sourceTree = "<group>"; };
+		22FE1D3215980684003B310C /* TouchTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22FE1D3615980684003B310C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		22FE1D3815980684003B310C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		22FE1D3A15980684003B310C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		22FE1D3E15980684003B310C /* TouchTracer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TouchTracer-Info.plist"; sourceTree = "<group>"; };
+		22FE1D4015980684003B310C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		22FE1D4215980684003B310C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22FE1D4415980684003B310C /* TouchTracer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TouchTracer-Prefix.pch"; sourceTree = "<group>"; };
+		22FE1D4515980684003B310C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		22FE1D4615980684003B310C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		22FE1D4915980684003B310C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		22FE1D4C15980684003B310C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		22FE1D4E15980684003B310C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		22FE1D4F15980684003B310C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22FE1D2F15980684003B310C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FE1D3715980684003B310C /* UIKit.framework in Frameworks */,
+				22FE1D3915980684003B310C /* Foundation.framework in Frameworks */,
+				22FE1D3B15980684003B310C /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22FE1D2715980684003B310C = {
+			isa = PBXGroup;
+			children = (
+				22FE1D3C15980684003B310C /* TouchTracer */,
+				22FE1D3515980684003B310C /* Frameworks */,
+				22FE1D3315980684003B310C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22FE1D3315980684003B310C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22FE1D3215980684003B310C /* TouchTracer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22FE1D3515980684003B310C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22FE1D3615980684003B310C /* UIKit.framework */,
+				22FE1D3815980684003B310C /* Foundation.framework */,
+				22FE1D3A15980684003B310C /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22FE1D3C15980684003B310C /* TouchTracer */ = {
+			isa = PBXGroup;
+			children = (
+				22FE1D4515980684003B310C /* AppDelegate.h */,
+				22FE1D4615980684003B310C /* AppDelegate.m */,
+				22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */,
+				22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */,
+				22FE1D4E15980684003B310C /* ViewController.h */,
+				22FE1D4F15980684003B310C /* ViewController.m */,
+				22B2B3861598094D00DA610B /* CircleView.h */,
+				22B2B3871598094D00DA610B /* CircleView.m */,
+				22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */,
+				22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */,
+				22FE1D3D15980684003B310C /* Supporting Files */,
+			);
+			path = TouchTracer;
+			sourceTree = "<group>";
+		};
+		22FE1D3D15980684003B310C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22FE1D3E15980684003B310C /* TouchTracer-Info.plist */,
+				22FE1D3F15980684003B310C /* InfoPlist.strings */,
+				22FE1D4215980684003B310C /* main.m */,
+				22FE1D4415980684003B310C /* TouchTracer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22FE1D3115980684003B310C /* TouchTracer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22FE1D5315980684003B310C /* Build configuration list for PBXNativeTarget "TouchTracer" */;
+			buildPhases = (
+				22FE1D2E15980684003B310C /* Sources */,
+				22FE1D2F15980684003B310C /* Frameworks */,
+				22FE1D3015980684003B310C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TouchTracer;
+			productName = TouchTracer;
+			productReference = 22FE1D3215980684003B310C /* TouchTracer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22FE1D2915980684003B310C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 22FE1D2C15980684003B310C /* Build configuration list for PBXProject "TouchTracer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 22FE1D2715980684003B310C;
+			productRefGroup = 22FE1D3315980684003B310C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22FE1D3115980684003B310C /* TouchTracer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22FE1D3015980684003B310C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FE1D4115980684003B310C /* InfoPlist.strings in Resources */,
+				22FE1D4A15980684003B310C /* MainStoryboard_iPhone.storyboard in Resources */,
+				22FE1D4D15980684003B310C /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22FE1D2E15980684003B310C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22FE1D4315980684003B310C /* main.m in Sources */,
+				22FE1D4715980684003B310C /* AppDelegate.m in Sources */,
+				22FE1D5015980684003B310C /* ViewController.m in Sources */,
+				22B2B3881598094D00DA610B /* CircleView.m in Sources */,
+				22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		22FE1D3F15980684003B310C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22FE1D4015980684003B310C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22FE1D4915980684003B310C /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22FE1D4C15980684003B310C /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		22FE1D5115980684003B310C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22FE1D5215980684003B310C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22FE1D5415980684003B310C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchTracer/TouchTracer-Prefix.pch";
+				INFOPLIST_FILE = "TouchTracer/TouchTracer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		22FE1D5515980684003B310C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TouchTracer/TouchTracer-Prefix.pch";
+				INFOPLIST_FILE = "TouchTracer/TouchTracer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22FE1D2C15980684003B310C /* Build configuration list for PBXProject "TouchTracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FE1D5115980684003B310C /* Debug */,
+				22FE1D5215980684003B310C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22FE1D5315980684003B310C /* Build configuration list for PBXNativeTarget "TouchTracer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22FE1D5415980684003B310C /* Debug */,
+				22FE1D5515980684003B310C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22FE1D2915980684003B310C /* Project object */;
+}
