@@ -10,9 +10,6 @@
 
 @interface CircleView : UIView
 
-@property (nonatomic) NSArray *circleCenters;
-@property (nonatomic) UIColor *circleColor;
-@property (nonatomic) CGFloat circleRadius;
-@property (nonatomic) CGFloat strokeWidth;
+@property (nonatomic) NSArray *circles;
 
 @end

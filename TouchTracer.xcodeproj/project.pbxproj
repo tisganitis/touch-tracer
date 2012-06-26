@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22076318159938E400FC4C84 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 22076317159938E400FC4C84 /* Circle.m */; };
 		22B2B3881598094D00DA610B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B3871598094D00DA610B /* CircleView.m */; };
 		22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */; };
 		22FE1D3715980684003B310C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3615980684003B310C /* UIKit.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22076316159938E400FC4C84 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		22076317159938E400FC4C84 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		22B2B3861598094D00DA610B /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		22B2B3871598094D00DA610B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchGestureRecognizer.h; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				22B2B3871598094D00DA610B /* CircleView.m */,
 				22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */,
 				22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */,
+				22076316159938E400FC4C84 /* Circle.h */,
+				22076317159938E400FC4C84 /* Circle.m */,
 				22FE1D3D15980684003B310C /* Supporting Files */,
 			);
 			path = TouchTracer;
@@ -179,6 +184,7 @@
 				22FE1D5015980684003B310C /* ViewController.m in Sources */,
 				22B2B3881598094D00DA610B /* CircleView.m in Sources */,
 				22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */,
+				22076318159938E400FC4C84 /* Circle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -39,7 +39,9 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
   UIGestureRecognizerState nextState = ([_currentTouches count] == 0) ? UIGestureRecognizerStateBegan : UIGestureRecognizerStateChanged;
+  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:touches];
   [_currentTouches addObjectsFromArray:[touches allObjects]];
+  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:touches];
   [self setState:nextState];
 }
 
@@ -50,9 +52,11 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touches];
   for( NSObject *touch in touches ) {
     [_currentTouches removeObject:touch];
   }
+  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touches];
   [self setState:([_currentTouches count] == 0) ? UIGestureRecognizerStateEnded : UIGestureRecognizerStateChanged];
 }
 

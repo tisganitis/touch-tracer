@@ -8,66 +8,42 @@
 
 #import "CircleView.h"
 
+#import "Circle.h"
+
 
 @implementation CircleView
 
-@synthesize circleCenters = _circleCenters;
-@synthesize circleColor = _circleColor;
-@synthesize circleRadius = _circleRadius;
-@synthesize strokeWidth = _strokeWidth;
-
-- (id)initWithFrame:(CGRect)frame
-{
-  self = [super initWithFrame:frame];
-  if (self) 
-  {
-    [self initializeDefaults];
-    
-  }
-  return self;
-}
-
-- (void)awakeFromNib
-{
-  [self initializeDefaults];
-}
-
-- (void)initializeDefaults
-{
-  _circleColor = [UIColor blackColor];
-  _circleRadius = 50.f;
-  _strokeWidth = 5.f;
-}
+@synthesize circles = _circles;
 
 - (void)drawRect:(CGRect)rect
 {
-  if( _circleCenters && [_circleCenters count] > 0 )
+  if( _circles && [_circles count] > 0 )
   {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    [_circleColor setStroke];
-    CGContextSetLineWidth(context, _strokeWidth);
-    
-    CGFloat frameSideLength = 2 * _circleRadius;
-    CGRect circleFrame = CGRectMake(-_circleRadius, -_circleRadius, frameSideLength, frameSideLength);
-    
-    CGPoint previousCenter = CGPointZero;
-    for( NSValue *circleCenterValue in _circleCenters )
+    for( Circle *circle in _circles )
     {
-      CGPoint circleCenter = [circleCenterValue CGPointValue];
-      CGContextTranslateCTM(context, (circleCenter.x - previousCenter.x), (circleCenter.y - previousCenter.y));
+      [[circle color] setStroke];
+      CGContextSetLineWidth(context, [circle strokeWidth]);
+      CGPoint circleCenter = [circle center];
+      CGFloat radius = [circle radius];
+      CGFloat diameter = 2 * radius;
+      CGRect circleFrame = CGRectZero;
+      circleFrame.origin.x = circleCenter.x - radius;
+      circleFrame.origin.y = circleCenter.y - radius;
+      circleFrame.size = CGSizeMake(diameter, diameter);
       CGContextStrokeEllipseInRect(context, circleFrame);
-      previousCenter = circleCenter;
     }
   }
 }
 
-- (void)setCircleCenters:(NSArray *)circleCenters
+- (void)setCircles:(NSArray *)circles
 {
-  if( _circleCenters != circleCenters )
+  if( _circles != circles )
   {
-    _circleCenters = circleCenters;
+    _circles = circles;
     [self setNeedsDisplay];
   }
 }
+
 @end
