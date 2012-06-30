@@ -90,17 +90,17 @@
 			children = (
 				22FE1D4515980684003B310C /* AppDelegate.h */,
 				22FE1D4615980684003B310C /* AppDelegate.m */,
-				22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */,
-				22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */,
-				22FE1D4E15980684003B310C /* ViewController.h */,
-				22FE1D4F15980684003B310C /* ViewController.m */,
-				22B2B3861598094D00DA610B /* CircleView.h */,
-				22B2B3871598094D00DA610B /* CircleView.m */,
-				22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */,
-				22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */,
 				22076316159938E400FC4C84 /* Circle.h */,
 				22076317159938E400FC4C84 /* Circle.m */,
+				22B2B3861598094D00DA610B /* CircleView.h */,
+				22B2B3871598094D00DA610B /* CircleView.m */,
+				22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */,
+				22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */,
 				22FE1D3D15980684003B310C /* Supporting Files */,
+				22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */,
+				22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */,
+				22FE1D4E15980684003B310C /* ViewController.h */,
+				22FE1D4F15980684003B310C /* ViewController.m */,
 			);
 			path = TouchTracer;
 			sourceTree = "<group>";

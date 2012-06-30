@@ -11,5 +11,6 @@
 @interface CircleView : UIView
 
 @property (nonatomic) NSArray *circles;
+@property (assign, nonatomic) BOOL showFPS;
 
 @end

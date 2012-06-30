@@ -55,6 +55,7 @@
   [super viewDidLoad];
 
   [_circleView setMultipleTouchEnabled:YES];
+  [_circleView setShowFPS:YES];
   
   _touchGestureRecognizer = [[TouchGestureRecognizer alloc] initWithTarget:self action:@selector(updateTouches:)];
   [_touchGestureRecognizer addObserver:self 
