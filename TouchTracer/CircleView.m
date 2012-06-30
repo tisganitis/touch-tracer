@@ -13,7 +13,7 @@
 
 #define FPS_FRAME (CGRect){{20.f,20.f},{200.f, 30.f}}
 #define FPS_UPDATE_INTERVAL 0.5
-#define TARGET_FPS 40
+#define TARGET_FPS 30
 
 
 @interface CircleView () {
@@ -41,6 +41,7 @@
     _fpsFont = [UIFont systemFontOfSize:17.f];
     _lastFPSSampleTime = [NSDate date];
     
+    // The dispatch source drives the animation at or near the desired FPS by requesting display on the main run loop each time it is fired.
     _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
     uint64_t nanoSecondInterval = 1000000000/TARGET_FPS;
     uint64_t nanoSecondLeeway = nanoSecondInterval / 2;

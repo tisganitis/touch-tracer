@@ -10,6 +10,7 @@
 		22076318159938E400FC4C84 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 22076317159938E400FC4C84 /* Circle.m */; };
 		22B2B3881598094D00DA610B /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B3871598094D00DA610B /* CircleView.m */; };
 		22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */; };
+		22B4F87F159F812F00FD0326 /* Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4F87E159F812F00FD0326 /* Touch.m */; };
 		22FE1D3715980684003B310C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3615980684003B310C /* UIKit.framework */; };
 		22FE1D3915980684003B310C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3815980684003B310C /* Foundation.framework */; };
 		22FE1D3B15980684003B310C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22FE1D3A15980684003B310C /* CoreGraphics.framework */; };
@@ -28,6 +29,8 @@
 		22B2B3871598094D00DA610B /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
 		22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchGestureRecognizer.h; sourceTree = "<group>"; };
 		22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchGestureRecognizer.m; sourceTree = "<group>"; };
+		22B4F87D159F812F00FD0326 /* Touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Touch.h; sourceTree = "<group>"; };
+		22B4F87E159F812F00FD0326 /* Touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Touch.m; sourceTree = "<group>"; };
 		22FE1D3215980684003B310C /* TouchTracer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchTracer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22FE1D3615980684003B310C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		22FE1D3815980684003B310C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,13 +97,15 @@
 				22076317159938E400FC4C84 /* Circle.m */,
 				22B2B3861598094D00DA610B /* CircleView.h */,
 				22B2B3871598094D00DA610B /* CircleView.m */,
-				22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */,
-				22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */,
-				22FE1D3D15980684003B310C /* Supporting Files */,
+				22B4F87D159F812F00FD0326 /* Touch.h */,
+				22B4F87E159F812F00FD0326 /* Touch.m */,
 				22B2B38A1598124400DA610B /* TouchGestureRecognizer.h */,
 				22B2B38B1598124400DA610B /* TouchGestureRecognizer.m */,
 				22FE1D4E15980684003B310C /* ViewController.h */,
 				22FE1D4F15980684003B310C /* ViewController.m */,
+				22FE1D4B15980684003B310C /* MainStoryboard_iPad.storyboard */,
+				22FE1D4815980684003B310C /* MainStoryboard_iPhone.storyboard */,
+				22FE1D3D15980684003B310C /* Supporting Files */,
 			);
 			path = TouchTracer;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				22B2B3881598094D00DA610B /* CircleView.m in Sources */,
 				22B2B38C1598124400DA610B /* TouchGestureRecognizer.m in Sources */,
 				22076318159938E400FC4C84 /* Circle.m in Sources */,
+				22B4F87F159F812F00FD0326 /* Touch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

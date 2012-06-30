@@ -10,10 +10,13 @@
 
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
+#import "Touch.h"
+
 
 @interface TouchGestureRecognizer () {
   
   NSMutableSet *_currentTouches;
+  NSMutableDictionary *_touchesForUITouches;
 }
 
 @end
@@ -27,6 +30,7 @@
   if( self )
   {
     _currentTouches = [NSMutableSet set];
+    _touchesForUITouches = [NSMutableDictionary dictionary];
   }
   return self;
 }
@@ -38,32 +42,66 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  UIGestureRecognizerState nextState = ([_currentTouches count] == 0) ? UIGestureRecognizerStateBegan : UIGestureRecognizerStateChanged;
-  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:touches];
-  [_currentTouches addObjectsFromArray:[touches allObjects]];
-  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:touches];
+  UIGestureRecognizerState nextState = ([_touchesForUITouches count] == 0) ? UIGestureRecognizerStateBegan : UIGestureRecognizerStateChanged;
+  NSMutableDictionary *newTouchesForUITouches = [NSMutableDictionary dictionaryWithCapacity:[touches count]];
+  NSMutableSet *newTouches = [NSMutableSet setWithCapacity:[touches count]];
+  for( UITouch *uiTouch in touches )
+  {
+    Touch *newTouch = [[Touch alloc] initWithUITouch:uiTouch];
+    [newTouches addObject:newTouch];
+    [newTouchesForUITouches setObject:newTouch forKey:[self keyForUITouch:uiTouch]];
+  }
+  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:newTouches];
+  [_currentTouches unionSet:newTouches];
+  [_touchesForUITouches addEntriesFromDictionary:newTouchesForUITouches];
+  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueUnionSetMutation usingObjects:newTouches];
   [self setState:nextState];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  for( UITouch *uiTouch in touches )
+  {
+    Touch *touch = [_touchesForUITouches objectForKey:[self keyForUITouch:uiTouch]];
+    [touch setLocationInView:[uiTouch locationInView:[touch view]]];
+  }
   [self setState:UIGestureRecognizerStateChanged];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touches];
-  for( NSObject *touch in touches ) {
-    [_currentTouches removeObject:touch];
+  NSMutableSet *touchesToRemove = [NSMutableSet setWithCapacity:[touches count]];
+  for( UITouch *uiTouch in touches ) 
+  {
+    Touch *touchForUITouch = [_touchesForUITouches objectForKey:[self keyForUITouch:uiTouch]];
+    [touchesToRemove addObject:touchForUITouch];
   }
-  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touches];
+  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touchesToRemove];
+  [_currentTouches minusSet:touchesToRemove];
+  for( UITouch *uiTouch in touches ) 
+  {
+    [_touchesForUITouches removeObjectForKey:[self keyForUITouch:uiTouch]];
+  }
+  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touchesToRemove];
   [self setState:([_currentTouches count] == 0) ? UIGestureRecognizerStateEnded : UIGestureRecognizerStateChanged];
 }
 
-
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
+  NSSet *touchesToRemove = [_currentTouches copy];
+  [self willChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touchesToRemove];
+  [_currentTouches removeAllObjects];
+  [_touchesForUITouches removeAllObjects];
+  [self didChangeValueForKey:@"currentTouches" withSetMutation:NSKeyValueMinusSetMutation usingObjects:touchesToRemove];
   [self setState:UIGestureRecognizerStateCancelled];
+}
+
+/**
+ The |UITouch| documentation forbids retaining UITouch objects during processing. However, the "Handling a Complex Multitouch Sequence" section of the "Event Handling Guide for iOS" suggests that the UITouch memory address may be used as a key to reliably identify UITouch objects throughout the touch sequence.
+ */
+- (NSString *)keyForUITouch:(UITouch *)touch
+{
+  return [NSString stringWithFormat:@"%p", touch];
 }
 
 @end

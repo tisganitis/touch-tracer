@@ -10,6 +10,7 @@
 
 #import "Circle.h"
 #import "CircleView.h"
+#import "Touch.h"
 #import "TouchGestureRecognizer.h"
 
 
@@ -76,28 +77,27 @@
 
 #pragma mark -
 
+// KVO is used to determine when individual touches begin and end via the |currentTouches| set.
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
   if( object == _touchGestureRecognizer && [keyPath isEqualToString:@"currentTouches"] )
   {
-    NSArray *newTouches = [change objectForKey:@"new"];
-    for( UITouch *touch in newTouches )
+    NSSet *newTouches = [change objectForKey:@"new"];
+    for( Touch *touch in newTouches )
     {
       Circle *circle = [[Circle alloc] init];
-      [circle setCenter:[touch locationInView:_circleView]];
+      [circle setCenter:[touch locationInView]];
       [circle setColor:[self colorForIndex:_index++]];
       [circle setRadius:CIRCLE_RADIUS];
       [circle setStrokeWidth:CIRCLE_STROKE_WIDTH];
       
-      NSString *key = [self keyForTouch:touch];
-      [_circlesForTouches setObject:circle forKey:key];
+      [_circlesForTouches setObject:circle forKey:touch];
     }
     
-    NSArray *endedTouches = [change objectForKey:@"old"];
+    NSSet *endedTouches = [change objectForKey:@"old"];
     for( UITouch *touch in endedTouches )
     {
-      NSString *key = [self keyForTouch:touch];
-      [_circlesForTouches removeObjectForKey:key];
+      [_circlesForTouches removeObjectForKey:touch];
     }
     
     if( [_circlesForTouches count] == 0 ) {
@@ -106,6 +106,7 @@
   }
 }
 
+// The GR target is used to monitor changes to the locations of the touches.
 - (void)updateTouches:(TouchGestureRecognizer *)gestureRecognizer
 {
   UIGestureRecognizerState state = [gestureRecognizer state];
@@ -113,22 +114,15 @@
   if( state == UIGestureRecognizerStateBegan ||
       state == UIGestureRecognizerStateChanged ) 
   { 
-    for( UITouch *touch in [gestureRecognizer currentTouches] )
+    for( Touch *touch in [gestureRecognizer currentTouches] )
     {
-      NSString *key = [self keyForTouch:touch];
-      Circle *circle = [_circlesForTouches objectForKey:key];
+      Circle *circle = [_circlesForTouches objectForKey:touch];
       if( circle ) {
-        [circle setCenter:[touch locationInView:_circleView]];
+        [circle setCenter:[touch locationInView]];
       }
     }
   }
   [_circleView setCircles:[_circlesForTouches allValues]];
-}
-
-- (NSString *)keyForTouch:(UITouch *)touch
-{
-  // UITouch does not implement the NSCopying protocol, so we must use another class as the key type
-  return [NSString stringWithFormat:@"%u", [touch hash]];
 }
 
 - (UIColor *)colorForIndex:(NSInteger)index
